@@ -1,9 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0;url=tel:+18479158026" />
-  </head>
-  <body>
-    <p>If you are not redirected, <a href="tel:+18479158026">click here to call </a>.</p>
-  </body>
+<head>
+  <title>Call Now</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    function callAndTrack() {
+
+      // Call Google Script (fire-and-forget)
+      fetch("https://script.google.com/macros/s/AKfycbxxLDWzrP1Su4TT9ymf4ERMUz65DO4VaT2R3ZnGgFhWfgOXZBwwOB_EGYW8mrLsWazF/exec", { mode: "no-cors" })
+        .then(response => console.log("Tracked"))
+        .catch(err => console.log("Error tracking:", err));
+
+      // Open phone dialer immediately
+      window.location.href = "tel:+18479158026";
+    }
+  </script>
+
+</head>
+
+<body style="text-align:center; margin-top:120px; font-family:Arial;">
+
+<h1>Call Now</h1>
+
+<button onclick="callAndTrack()" 
+        style="font-size:22px; padding:15px 30px; cursor:pointer;">
+  Tap Here To Call
+</button>
+
+<p style="margin-top:30px; font-size:14px;">
+If the call doesn’t start automatically, tap again.
+</p>
+
+</body>
 </html>
