@@ -6,15 +6,16 @@
   <script>
     function callAndTrack() {
 
-      // Call Google Script
-      fetch(https://script.google.com/macros/s/AKfycbwrY8RbhMzi7c_swiWZrANlWy0-vT0OikRd8-B-eU2v2f9CsyBWSXK2yQPL7mrDROEp/exec")
+      // Call Google Script (URL MUST be in quotes)
+      fetch("https://script.google.com/macros/s/AKfycbwrY8RbhMzi7c_swiWZrANlWy0-vT0OikRd8-B-eU2v2f9CsyBWSXK2yQPL7mrDROEp/exec")
         .then(response => response.text())
-        .then(data => console.log(data));
+        .then(data => console.log(data))
+        .catch(error => console.log("Script error:", error));
 
       // Open phone call after small delay
       setTimeout(function() {
         window.location.href = "tel:+18479158026";
-      }, 300);
+      }, 500);
     }
 
     // Auto trigger on page load
@@ -33,4 +34,3 @@ If the call didn’t open, tap here
 
 </body>
 </html>
-
