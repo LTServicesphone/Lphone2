@@ -1,12 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="refresh" content="0;url=tel:+18479158026" />
-  </head>
-  <body>
-    <p>If you are not redirected, <a href="tel:+8479158026">click here to call <b>Logan McCabe<b>
-    </b></b></a>.</p>
-  </body>
-</html>
+<head>
+  <title>Calling...</title>
 
+  <script>
+    function callAndTrack() {
+
+      // Call Google Script
+      fetch(https://script.google.com/macros/s/AKfycbwrY8RbhMzi7c_swiWZrANlWy0-vT0OikRd8-B-eU2v2f9CsyBWSXK2yQPL7mrDROEp/exec")
+        .then(response => response.text())
+        .then(data => console.log(data));
+
+      // Open phone call after small delay
+      setTimeout(function() {
+        window.location.href = "tel:+18479158026";
+      }, 300);
+    }
+
+    // Auto trigger on page load
+    window.onload = function() {
+      callAndTrack();
+    };
+  </script>
+
+</head>
+
+<body style="text-align:center; margin-top:100px; font-family:Arial;">
+
+<h2 onclick="callAndTrack()" style="cursor:pointer;">
+If the call didn’t open, tap here
+</h2>
+
+</body>
+</html>
 
