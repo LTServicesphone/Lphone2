@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Calling...</title>
-
-  <script>
-    function callAndTrack() {
-
-      // Call Google Script (URL MUST be in quotes)
-      fetch("https://script.google.com/macros/s/AKfycbwrY8RbhMzi7c_swiWZrANlWy0-vT0OikRd8-B-eU2v2f9CsyBWSXK2yQPL7mrDROEp/exec")
-        .then(response => response.text())
-        .then(data => console.log(data))
-        .catch(error => console.log("Script error:", error));
-
-      // Open phone call after small delay
-      setTimeout(function() {
-        window.location.href = "tel:+18479158026";
-      }, 500);
-    }
-
-    // Auto trigger on page load
-    window.onload = function() {
-      callAndTrack();
-    };
-  </script>
-
+  <title>Test Call</title>
 </head>
+<body>
 
-<body style="text-align:center; margin-top:100px; font-family:Arial;">
-
-<h2 onclick="callAndTrack()" style="cursor:pointer;">
-If the call didn’t open, tap here
-</h2>
+<h1 onclick="window.location.href='tel:+18479158026'" style="cursor:pointer;">
+Tap here to call
+</h1>
 
 </body>
 </html>
